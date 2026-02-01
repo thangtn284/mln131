@@ -1,29 +1,26 @@
-import { useState } from 'react';
-import './Navigation.css';
+import React from 'react';
 
 function Navigation({ onNavigate, currentPage }) {
+  const navItems = [
+    { id: 'info', label: '📖 Kiến Thức', color: '#0071e3' },
+    { id: 'quiz', label: '🎮 Trắc Nghiệm', color: '#34c759' },
+    { id: 'chatbot', label: '🤖 Trợ Lý AI', color: '#af52de' }
+  ];
+
   return (
-    <nav className="navigation">
-      <h1 className="site-title">🚩 Triết Học Mác-Lênin</h1>
-      <div className="nav-buttons">
-        <button 
-          className={currentPage === 'info' ? 'active' : ''}
-          onClick={() => onNavigate('info')}
-        >
-          📚 Thông Tin
-        </button>
-        <button 
-          className={currentPage === 'quiz' ? 'active' : ''}
-          onClick={() => onNavigate('quiz')}
-        >
-          🎮 Quiz Game
-        </button>
-        <button 
-          className={currentPage === 'chatbot' ? 'active' : ''}
-          onClick={() => onNavigate('chatbot')}
-        >
-          💬 Chatbot
-        </button>
+    <nav className="nav-container">
+      <div className="logo">Triết Học <span>Pro</span></div>
+      <div className="nav-links">
+        {navItems.map((item) => (
+          <button
+            key={item.id}
+            className={`nav-btn ${currentPage === item.id ? 'active' : ''}`}
+            onClick={() => onNavigate(item.id)}
+            style={{ '--accent-color': item.color }}
+          >
+            {item.label}
+          </button>
+        ))}
       </div>
     </nav>
   );
