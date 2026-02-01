@@ -1,5 +1,18 @@
 import React, { useEffect } from 'react';
 import './HomePage.css';
+import herobg from '../assets/images/hero-section.jpg';
+// Import avatar images
+import avatarSon from '../assets/images/avatar-son.jpg';
+import avatarHan from '../assets/images/avatar-han.jpg';
+
+// Import background image if available
+// To use an image from pandas-interface/src/assets/images/:
+// 1. Copy the image to src/assets/images/hero-bg.jpg (or your preferred name)
+// 2. Uncomment and update the import below:
+// import heroBackground from '../assets/images/hero-bg.jpg';
+
+// For now, using gradient fallback
+const heroBackground = herobg;
 
 function HomePage({ onNavigate }) {
   useEffect(() => {
@@ -32,7 +45,12 @@ function HomePage({ onNavigate }) {
   return (
     <div className="homepage-container">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section 
+        className="hero-section"
+        style={heroBackground ? {
+          backgroundImage: `url(${heroBackground})`,
+        } : {}}
+      >
         <span className="hero-tagline">Chào mừng đến với</span>
         <h1 className="hero-title">Triết Học Mác-Lênin<br/>Học Tập & Nghiên Cứu</h1>
         <p className="hero-desc">
@@ -162,27 +180,46 @@ function HomePage({ onNavigate }) {
           <p>Những thành viên đã xây dựng nên dự án này</p>
         </div>
 
-        <div className="team-grid">
-          {[
-            { name: 'Nguyễn Văn A', studentId: 'SE123456', role: 'Frontend Developer', avatar: '👨‍💻' },
-            { name: 'Trần Thị B', studentId: 'SE123457', role: 'Backend Developer', avatar: '👩‍💻' },
-            { name: 'Lê Văn C', studentId: 'SE123458', role: 'UI/UX Designer', avatar: '🎨' },
-            { name: 'Phạm Thị D', studentId: 'SE123459', role: 'Content Writer', avatar: '✍️' },
-            { name: 'Hoàng Văn E', studentId: 'SE123460', role: 'Project Manager', avatar: '👔' },
-            { name: 'Vũ Thị F', studentId: 'SE123461', role: 'QA Tester', avatar: '🔍' },
-            { name: 'Đỗ Văn G', studentId: 'SE123462', role: 'Full-stack Developer', avatar: '🚀' }
-          ].map((member, index) => (
-            <div key={index} className="team-member-card">
-              <div className="member-avatar">
-                <span className="avatar-emoji">{member.avatar}</span>
+        <div className="team-carousel-wrapper">
+          <div className="team-carousel">
+            {/* Duplicate items for seamless loop */}
+            {[
+              { name: 'Đường Minh Sơn', studentId: 'HE186291', role: 'Trưởng nhóm', avatar: avatarSon },
+              { name: 'Nguyễn Quỳnh Hân', studentId: 'HA173038', role: 'Thư ký', avatar: avatarHan },
+              { name: 'Lê Văn C', studentId: 'SE123458', role: 'UI/UX Designer', avatar: '🎨' },
+              { name: 'Phạm Thị D', studentId: 'SE123459', role: 'Content Writer', avatar: '✍️' },
+              { name: 'Hoàng Văn E', studentId: 'SE123460', role: 'Project Manager', avatar: '👔' },
+              { name: 'Vũ Thị F', studentId: 'SE123461', role: 'QA Tester', avatar: '🔍' },
+              { name: 'Đỗ Văn G', studentId: 'SE123462', role: 'Full-stack Developer', avatar: '🚀' }
+            ].concat([
+              { name: 'Đường Minh Sơn', studentId: 'HE186291', role: 'Trưởng nhóm', avatar: avatarSon },
+              { name: 'Nguyễn Quỳnh Hân', studentId: 'HA173038', role: 'Thư ký', avatar: avatarHan },
+              { name: 'Lê Văn C', studentId: 'SE123458', role: 'UI/UX Designer', avatar: '🎨' },
+              { name: 'Phạm Thị D', studentId: 'SE123459', role: 'Content Writer', avatar: '✍️' },
+              { name: 'Hoàng Văn E', studentId: 'SE123460', role: 'Project Manager', avatar: '👔' },
+              { name: 'Vũ Thị F', studentId: 'SE123461', role: 'QA Tester', avatar: '🔍' },
+              { name: 'Đỗ Văn G', studentId: 'SE123462', role: 'Full-stack Developer', avatar: '🚀' }
+            ]).map((member, index) => {
+            const isImage = typeof member.avatar !== 'string' || member.avatar.includes('.jpg') || member.avatar.includes('.png');
+            
+            return (
+              <div key={`${member.studentId}-${index}`} className="team-member-card">
+                <div className="member-avatar">
+                  {isImage ? (
+                    <img src={member.avatar} alt={member.name} />
+                  ) : (
+                    <span className="avatar-emoji">{member.avatar}</span>
+                  )}
+                </div>
+                <div className="member-info">
+                  <h3 className="member-name">{member.name}</h3>
+                  <p className="member-student-id">MSSV: {member.studentId}</p>
+                  <p className="member-role">{member.role}</p>
+                </div>
               </div>
-              <div className="member-info">
-                <h3 className="member-name">{member.name}</h3>
-                <p className="member-student-id">MSSV: {member.studentId}</p>
-                <p className="member-role">{member.role}</p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
+          </div>
         </div>
       </section>
 
