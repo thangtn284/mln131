@@ -193,17 +193,17 @@ function HomePage({ onNavigate }) {
               { name: 'Nguyễn Quỳnh Hân', studentId: 'HA173038', role: 'Thư ký', avatar: avatarHan },
               { name: 'Nguyễn Quang Huy', studentId: 'HE186195', role: 'Thiết kế', avatar: avatarHuy },
               { name: 'Nguyễn Trần Trọng Hiếu', studentId: 'HE180407', role: 'Nội dung', avatar: avatarHieu },
-              { name: 'Trần Nhật Thăng', studentId: 'SE123460', role: 'Kiểm tra', avatar: avatarThang },
-              { name: 'Phạm Quang Anh', studentId: 'HE180290', role: 'Thiết kế AI', avatar: avatarAnh },
-              { name: 'Trần Văn Tuấn', studentId: 'HE180290', role: 'Phát triển', avatar: avatarTuan }
+              { name: 'Trần Nhật Thăng', studentId: 'HE186465', role: 'Kiểm tra', avatar: avatarThang },
+              { name: 'Phạm Quang Anh', studentId: 'HE180725', role: 'Thiết kế AI', avatar: avatarAnh },
+              { name: 'Trần Văn Tuấn', studentId: 'HE181340', role: 'Phát triển', avatar: avatarTuan }
             ].concat([
               { name: 'Đường Minh Sơn', studentId: 'HE186291', role: 'Trưởng nhóm', avatar: avatarSon },
               { name: 'Nguyễn Quỳnh Hân', studentId: 'HA173038', role: 'Thư ký', avatar: avatarHan },
               { name: 'Nguyễn Quang Huy', studentId: 'HE186195', role: 'Thiết kế', avatar: avatarHuy },
               { name: 'Nguyễn Trần Trọng Hiếu', studentId: 'HE180407', role: 'Nội dung', avatar: avatarHieu },
-              { name: 'Trần Nhật Thăng', studentId: 'SE123460', role: 'Kiểm tra', avatar: avatarThang },
-              { name: 'Phạm Quang Anh', studentId: 'HE180290', role: 'Thiết kế AI', avatar: avatarAnh },
-              { name: 'Trần Văn Tuấn', studentId: 'HE180290', role: 'Phát triển', avatar: avatarTuan }
+              { name: 'Trần Nhật Thăng', studentId: 'HE186465', role: 'Kiểm tra', avatar: avatarThang },
+              { name: 'Phạm Quang Anh', studentId: 'HE180725', role: 'Thiết kế AI', avatar: avatarAnh },
+              { name: 'Trần Văn Tuấn', studentId: 'HE181340', role: 'Phát triển', avatar: avatarTuan }
             ]).map((member, index) => {
             const isImage = typeof member.avatar !== 'string' || member.avatar.includes('.jpg') || member.avatar.includes('.png');
             
