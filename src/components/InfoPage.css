@@ -23,6 +23,7 @@
   letter-spacing: 0.1em;
   color: var(--accent-blue);
   margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 .hero-title {
@@ -377,25 +378,28 @@
 }
 
 .back-button {
-  background: var(--text-primary);
+  background: linear-gradient(135deg, #c31432 0%, #240b36 100%);
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 50px;
-  font-size: 0.95rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(195, 20, 50, 0.3);
 }
 
 .back-button:hover {
-  transform: scale(1.05);
-  background: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(195, 20, 50, 0.4);
 }
 
 /* Navigation Section */
 .navigation-section {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
   margin-top: 3rem;
   text-align: center;
   padding: 2rem 0;

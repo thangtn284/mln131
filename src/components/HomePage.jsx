@@ -4,6 +4,11 @@ import herobg from '../assets/images/hero-section.jpg';
 // Import avatar images
 import avatarSon from '../assets/images/avatar-son.jpg';
 import avatarHan from '../assets/images/avatar-han.jpg';
+import avatarHuy from '../assets/images/avatar-huy.jpg';
+import avatarHieu from '../assets/images/avatar-hieu.jpg';
+import avatarThang from '../assets/images/avatar-thang.jpg';
+import avatarAnh from '../assets/images/avatar-anh.jpg';
+import avatarTuan from '../assets/images/avatar-tuan.jpg';
 
 // Import background image if available
 // To use an image from pandas-interface/src/assets/images/:
@@ -186,19 +191,19 @@ function HomePage({ onNavigate }) {
             {[
               { name: 'Đường Minh Sơn', studentId: 'HE186291', role: 'Trưởng nhóm', avatar: avatarSon },
               { name: 'Nguyễn Quỳnh Hân', studentId: 'HA173038', role: 'Thư ký', avatar: avatarHan },
-              { name: 'Lê Văn C', studentId: 'SE123458', role: 'UI/UX Designer', avatar: '🎨' },
-              { name: 'Phạm Thị D', studentId: 'SE123459', role: 'Content Writer', avatar: '✍️' },
-              { name: 'Hoàng Văn E', studentId: 'SE123460', role: 'Project Manager', avatar: '👔' },
-              { name: 'Vũ Thị F', studentId: 'SE123461', role: 'QA Tester', avatar: '🔍' },
-              { name: 'Đỗ Văn G', studentId: 'SE123462', role: 'Full-stack Developer', avatar: '🚀' }
+              { name: 'Nguyễn Quang Huy', studentId: 'HE186195', role: 'Thiết kế', avatar: avatarHuy },
+              { name: 'Nguyễn Trần Trọng Hiếu', studentId: 'HE180407', role: 'Nội dung', avatar: avatarHieu },
+              { name: 'Trần Nhật Thăng', studentId: 'SE123460', role: 'Kiểm tra', avatar: avatarThang },
+              { name: 'Phạm Quang Anh', studentId: 'HE180290', role: 'Thiết kế AI', avatar: avatarAnh },
+              { name: 'Trần Văn Tuấn', studentId: 'HE180290', role: 'Phát triển', avatar: avatarTuan }
             ].concat([
               { name: 'Đường Minh Sơn', studentId: 'HE186291', role: 'Trưởng nhóm', avatar: avatarSon },
               { name: 'Nguyễn Quỳnh Hân', studentId: 'HA173038', role: 'Thư ký', avatar: avatarHan },
-              { name: 'Lê Văn C', studentId: 'SE123458', role: 'UI/UX Designer', avatar: '🎨' },
-              { name: 'Phạm Thị D', studentId: 'SE123459', role: 'Content Writer', avatar: '✍️' },
-              { name: 'Hoàng Văn E', studentId: 'SE123460', role: 'Project Manager', avatar: '👔' },
-              { name: 'Vũ Thị F', studentId: 'SE123461', role: 'QA Tester', avatar: '🔍' },
-              { name: 'Đỗ Văn G', studentId: 'SE123462', role: 'Full-stack Developer', avatar: '🚀' }
+              { name: 'Nguyễn Quang Huy', studentId: 'HE186195', role: 'Thiết kế', avatar: avatarHuy },
+              { name: 'Nguyễn Trần Trọng Hiếu', studentId: 'HE180407', role: 'Nội dung', avatar: avatarHieu },
+              { name: 'Trần Nhật Thăng', studentId: 'SE123460', role: 'Kiểm tra', avatar: avatarThang },
+              { name: 'Phạm Quang Anh', studentId: 'HE180290', role: 'Thiết kế AI', avatar: avatarAnh },
+              { name: 'Trần Văn Tuấn', studentId: 'HE180290', role: 'Phát triển', avatar: avatarTuan }
             ]).map((member, index) => {
             const isImage = typeof member.avatar !== 'string' || member.avatar.includes('.jpg') || member.avatar.includes('.png');
             
